@@ -102,10 +102,3 @@ body {
     margin: 5px 0;
     font-size: 0.95rem;
 }
-
-.footer-subtext {
-    opacity: 0.7;
-    font-size: 0.8rem !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
