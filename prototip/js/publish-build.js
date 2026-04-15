@@ -1,4 +1,4 @@
-// State management
+// Autor: Aleksandar Cvetković
 const publishState = {
     images: [],
     benchmarks: [],

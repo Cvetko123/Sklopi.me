@@ -1,4 +1,4 @@
-
+// Autor: Aleksandar Cvetković
 const passwordRequirements = {
     minLength: 8,
     hasUppercase: /[A-Z]/,
