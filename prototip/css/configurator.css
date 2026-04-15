@@ -35,8 +35,17 @@
     color: #666;
 }
 
-.col-cat { width: 150px; }
-.col-selection { flex: 1; }
+.col-cat {
+    width: 150px;
+}
+.col-selection {
+    flex: 1;
+}
+
+.col-selection a {
+    text-decoration: none;
+}
+
 .col-price { width: 120px; text-align: right; margin-right: 30px; }
 .col-action { width: 180px; text-align: right; }
 
@@ -55,6 +64,18 @@
     font-weight: 600;
     font-size: 0.9rem;
 }
+
+.remove-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
 
 .table-footer {
     display: flex;
