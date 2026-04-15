@@ -12,7 +12,6 @@
     flex: 1;
 }
 
-/* Table Styling */
 .component-table {
     background: var(--primary-bg);
     border: 1px solid #e0e0e0;
@@ -80,6 +79,7 @@
 .table-footer {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     padding: 20px;
     background-color: #f8f9fa;
     font-size: 1.2rem;
@@ -88,7 +88,6 @@
 
 .total-label { margin-right: 20px; }
 
-/* AI Sidebar Styling */
 .ai-sidebar {
     width: 350px;
     height: 700px;
@@ -190,4 +189,16 @@
     padding: 0 15px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.buy-all-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #2ecc71;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: 20px;
 }
