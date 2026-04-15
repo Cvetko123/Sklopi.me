@@ -79,6 +79,16 @@
     font-size: 1.1rem;
 }
 
+.build-info h3 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.build-info h3 a:hover {
+    color: var(--accent-color);
+}
+
 .build-price {
     font-weight: 700;
     color: var(--accent-color);
