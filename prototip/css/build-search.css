@@ -203,25 +203,6 @@
     color: var(--text-color);
 }
 
-.view-build-btn {
-    display: inline-block;
-    width: 110px;
-    padding: 10px 0;
-    text-align: center;
-    background-color: var(--accent-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-left: 25px;
-    transition: background-color 0.2s;
-}
-
-.view-build-btn:hover {
-    background-color: var(--accent-dark);
-}
-
 .build-thumbnail {
     width: 80px;
     height: 80px;
