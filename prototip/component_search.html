@@ -27,39 +27,56 @@
 
 <main class="search-layout">
     <aside class="sidebar">
-        <div class="filter-group">
-            <div class="filter-title">Manufacturer</div>
-            <label><input type="checkbox"> AMD</label>
-            <label><input type="checkbox"> Intel</label>
-        </div>
-
-        <div class="filter-group">
-            <div class="filter-title">Price (RSD)</div>
-            <div class="input-row">
-                <input type="number" placeholder="Min">
-                <input type="number" placeholder="Max">
+        <details class="sort-dropdown">
+            <summary class="sort-btn">Sort By...</summary>
+            <div class="sort-content">
+                <label><input type="radio" name="sort"> Price: Low to High</label>
+                <label><input type="radio" name="sort"> Price: High to Low</label>
+                <label><input type="radio" name="sort"> Name: A to Z</label>
+                <label><input type="radio" name="sort"> Name: Z to A</label>
             </div>
-        </div>
+        </details>
 
-        <div class="filter-group">
-            <div class="filter-title">Core Count</div>
-            <div class="input-row">
-                <input type="number" placeholder="Min">
-                <input type="number" placeholder="Max">
+        <div class="filter-container">
+            <div class="filter-group">
+                <div class="filter-title">Manufacturer</div>
+                <label><input type="checkbox"> AMD</label>
+                <label><input type="checkbox"> Intel</label>
             </div>
-        </div>
 
-        <div class="filter-group">
-            <div class="filter-title">Socket</div>
-            <label><input type="checkbox"> AM5</label>
-            <label><input type="checkbox"> AM4</label>
-            <label><input type="checkbox"> LGA 1700</label>
-            <label><input type="checkbox"> LGA 1200</label>
+            <div class="filter-group">
+                <div class="filter-title">Price (RSD)</div>
+                <div class="input-row">
+                    <input type="number" placeholder="Min">
+                    <input type="number" placeholder="Max">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-title">Core Count</div>
+                <div class="input-row">
+                    <input type="number" placeholder="Min">
+                    <input type="number" placeholder="Max">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-title">Socket</div>
+                <label><input type="checkbox"> AM5</label>
+                <label><input type="checkbox"> AM4</label>
+                <label><input type="checkbox"> LGA 1700</label>
+                <label><input type="checkbox"> LGA 1200</label>
+            </div>
+
+            <button class="search-action-btn">Apply Filters</button>
         </div>
     </aside>
 
     <section class="results-area">
-        <input type="text" class="search-box" placeholder="Search CPUs...">
+        <div class="search-bar">
+            <input type="text" class="search-box" placeholder="Search CPUs...">
+            <button class="search-action-btn primary">Search</button>
+        </div>
         
         <div class="results-list">
             <div class="result-item">
@@ -86,6 +103,11 @@
                 <span class="item-spec">LGA 1700</span>
                 <span class="item-price">68000 RSD</span>
             </div>
+        </div>
+
+        <div class="empty-state" style="display: none;">
+            <h3>Nema rezultata</h3>
+            <p>U bazi podataka ne postoje komponente koje ispunjavaju zadate kriterijume.</p>
         </div>
     </section>
 </main>
