@@ -122,6 +122,16 @@
     gap: 5px;
 }
 
+.add-btn {
+    background: var(--accent-color);
+    color: white;
+    padding: 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
 .price-highlight .label {
     font-size: 0.9rem;
     opacity: 0.9;
@@ -399,4 +409,3 @@
         margin-left: 10px;
     }
 }
-
