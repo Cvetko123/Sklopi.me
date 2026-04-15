@@ -1,4 +1,4 @@
-
+// Autor: Aleksandar Cvetković
 const buildState = {
     buildId: 1,
     liked: false,
@@ -143,6 +143,25 @@ function changeMainImage(thumbnail) {
     // Update active thumbnail
     thumbnails.forEach(thumb => thumb.classList.remove('active'));
     thumbnail.classList.add('active');
+}
+
+// Remove Thumbnail Image
+function removeThumbnail(event) {
+    event.stopPropagation();
+    const thumbnail = event.currentTarget.closest('.thumbnail');
+    const thumbnailsContainer = document.querySelector('.thumbnails-container');
+    const mainImage = document.getElementById('mainImage');
+    
+    thumbnail.remove();
+    
+    // If removed thumbnail was active, set first remaining as active
+    const remainingThumbnails = thumbnailsContainer.querySelectorAll('.thumbnail');
+    if (remainingThumbnails.length > 0) {
+        const firstThumbnail = remainingThumbnails[0];
+        firstThumbnail.classList.add('active');
+        const imgSrc = firstThumbnail.querySelector('img').src;
+        mainImage.src = imgSrc.replace('w=150', 'w=800');
+    }
 }
 
 // Load Build Data (placeholder for real data loading)
