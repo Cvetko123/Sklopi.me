@@ -49,6 +49,7 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-light);
+    text-decoration: none;
 }
 
 .nav-list {
