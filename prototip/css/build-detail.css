@@ -48,7 +48,8 @@
 
 .like-btn,
 .dislike-btn,
-.edit-btn {
+.edit-btn,
+.delete-btn {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -97,6 +98,11 @@
     background-color: var(--accent-color);
     color: white;
     border-color: var(--accent-color);
+}
+
+.delete-btn {
+    background-color: red;
+    color:white;
 }
 
 .edit-btn:hover {
