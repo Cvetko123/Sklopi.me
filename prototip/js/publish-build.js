@@ -11,7 +11,7 @@ const publishState = {
     ]
 };
 
-// Initialize on page load
+
 document.addEventListener('DOMContentLoaded', function() {
     setupImageUpload();
     setupBenchmarkTable();
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     displayComponents();
 });
 
-// Image Upload Setup
+
 function setupImageUpload() {
     const uploadArea = document.getElementById('imageUploadArea');
     const imageInput = document.getElementById('imageInput');
@@ -98,7 +98,7 @@ function displayImagePreviews() {
     });
 }
 
-// Benchmark Table Setup
+
 function setupBenchmarkTable() {
     const addBtn = document.getElementById('addBenchmarkBtn');
     addBtn.addEventListener('click', addBenchmarkRow);
@@ -117,7 +117,7 @@ function addBenchmarkRow() {
     row.dataset.benchmarkId = rowId;
     row.innerHTML = `
         <td><input type="text" placeholder="npr. 3DMark, GTA VI, Cinebench..." required></td>
-        <td><input type="text" placeholder="npr. 25.000 FPS" required></td>
+        <td><input type="text" placeholder="npr. 60 FPS" required></td>
         <td><button type="button" class="remove-row-btn" data-row-id="${rowId}">Obriši</button></td>
     `;
 
@@ -144,7 +144,7 @@ function checkEmptyBenchmarkTable() {
     }
 }
 
-// Display Components
+
 function displayComponents() {
     const componentsList = document.getElementById('componentsList');
     componentsList.innerHTML = '';
@@ -165,7 +165,7 @@ function displayComponents() {
     });
 }
 
-// Form Validation and Submission
+
 function setupFormSubmission() {
     const form = document.getElementById('publishBuildForm');
     form.addEventListener('submit', handleFormSubmit);
@@ -178,30 +178,30 @@ function handleFormSubmit(e) {
     const imageErrorDiv = document.getElementById('imageError');
     const benchmarkErrorDiv = document.getElementById('benchmarkError');
 
-    // Clear previous errors
+
     clearError(imageErrorDiv);
     clearError(benchmarkErrorDiv);
 
-    // Validate description
+
     if (!description) {
         alert('Molimo popunite opis.');
         return;
     }
 
-    // Validate images
+
     if (publishState.images.length === 0) {
         showError(imageErrorDiv, 'Molimo dodajte najmanje jednu sliku.');
         return;
     }
 
-    // Validate benchmarks
+
     const benchmarkRows = document.querySelectorAll('#benchmarkBody tr:not(.empty-row)');
     if (benchmarkRows.length === 0) {
         showError(benchmarkErrorDiv, 'Molimo dodajte najmanje jedan rezultat benchmark softvera.');
         return;
     }
 
-    // Collect benchmark data
+
     const benchmarks = [];
     benchmarkRows.forEach(row => {
         const inputs = row.querySelectorAll('input');
@@ -221,7 +221,7 @@ function handleFormSubmit(e) {
 
     if (benchmarks.length === 0) return;
 
-    // Prepare form data
+
     const formData = {
         description: description,
         images: publishState.images.length,
@@ -230,16 +230,16 @@ function handleFormSubmit(e) {
     };
 
     console.log('Build data:', formData);
-    
-    // Show success message
-    alert('Vaš build je uspešno objavljen!');
+
+
+    alert('Vaš računar je uspešno objavljen!');
 
 
     window.location.href = 'index.html';
 
 }
 
-// Helper Functions
+
 function showError(errorDiv, message) {
     errorDiv.textContent = message;
     errorDiv.classList.add('show');
