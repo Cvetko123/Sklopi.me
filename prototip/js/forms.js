@@ -124,12 +124,12 @@ function handleLoginSubmit(event) {
         return;
     }
 
-    alert('Uspesno ste e ulogovali!');
+    alert('Uspesno ste se ulogovali!');
 
     console.log('Login data:', { email, password });
 
 
-    window.location.href = 'index.html';
+    window.location.href = 'account.html';
 
 }
 
