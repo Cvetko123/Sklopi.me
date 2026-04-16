@@ -74,13 +74,13 @@
                         </div>
                         <div class="form-group">
                             <label for="componentManufacturer">Proizvođač</label>
-                            <input type="text" id="componentManufacturer" value="Intel" placeholder="npr. Intel, AMD, NVIDIA...">
+                            <input type="text" id="componentManufacturer" value="Intel" placeholder="Proizvođač">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="componentDescription">Opis</label>
-                        <textarea id="componentDescription" rows="4" placeholder="Opis komponente...">Intel Core i9-13900K je najmoćniji procesor iz Intel 13. generacije. Idealan je za gaming, 3D rendering, video editovanje i sve druge zahtevne zadatke. Sa 24 jezgra (8 P-cores + 16 E-cores) i do 32 niti, ovaj procesor pruža neverovatnu performansu.</textarea>
+                        <textarea id="componentDescription" rows="4" placeholder="Opis komponente..." req>Intel Core i9-13900K je najmoćniji procesor iz Intel 13. generacije. Idealan je za gaming, 3D rendering, video editovanje i sve druge zahtevne zadatke. Sa 24 jezgra (8 P-cores + 16 E-cores) i do 32 niti, ovaj procesor pruža neverovatnu performansu.</textarea>
                     </div>
                 </div>
 
@@ -135,28 +135,33 @@
                     </div>
                     <div class="prices-editor" id="pricesEditor">
                         <div class="price-row-header">
-                            <span>Prodavnica</span>
-                            <span>Cena (RSD)</span>
-                            <span></span>
-                        </div>
+                                <span>Prodavnica</span>
+                                <span>Link</span>
+                                <span>Cena (RSD)</span>
+                                <span></span>
+                            </div>
                         <div class="price-row" data-id="1">
-                            <input type="text" class="store-name-input" value="Kompjuterski svet" placeholder="Naziv prodavnice">
-                            <input type="number" class="store-price-input" value="45000" placeholder="Cena u RSD">
+                            <input type="text" class="store-name-input" value="Kompjuterski svet" placeholder="Naziv prodavnice" required>
+                            <input type="text" class="store-link-input" value="https://google.com" placeholder="Link ka prodavnici" required>
+                            <input type="number" class="store-price-input" value="45000" placeholder="Cena u RSD" required>
                             <button type="button" class="spec-remove-btn" onclick="removePrice(this)"><i class="fas fa-times"></i></button>
                         </div>
                         <div class="price-row" data-id="2">
-                            <input type="text" class="store-name-input" value="Tehnomanija" placeholder="Naziv prodavnice">
-                            <input type="number" class="store-price-input" value="46500" placeholder="Cena u RSD">
+                            <input type="text" class="store-name-input" value="Tehnomanija" placeholder="Naziv prodavnice" required>
+                            <input type="text" class="store-link-input" value="https://google.com" placeholder="Link ka prodavnici" required>
+                            <input type="number" class="store-price-input" value="46500" placeholder="Cena u RSD" required>
                             <button type="button" class="spec-remove-btn" onclick="removePrice(this)"><i class="fas fa-times"></i></button>
                         </div>
                         <div class="price-row" data-id="3">
-                            <input type="text" class="store-name-input" value="PC Kamp" placeholder="Naziv prodavnice">
-                            <input type="number" class="store-price-input" value="47200" placeholder="Cena u RSD">
+                            <input type="text" class="store-name-input" value="PC Kamp" placeholder="Naziv prodavnice" required>
+                            <input type="text" class="store-link-input" value="https://google.com" placeholder="Link ka prodavnici" required>
+                            <input type="number" class="store-price-input" value="47200" placeholder="Cena u RSD" required>
                             <button type="button" class="spec-remove-btn" onclick="removePrice(this)"><i class="fas fa-times"></i></button>
                         </div>
                         <div class="price-row" data-id="4">
-                            <input type="text" class="store-name-input" value="Informatika Plus" placeholder="Naziv prodavnice">
-                            <input type="number" class="store-price-input" value="48000" placeholder="Cena u RSD">
+                            <input type="text" class="store-name-input" value="Gigatron" placeholder="Naziv prodavnice" required>
+                            <input type="text" class="store-link-input" value="https://gigatron.rs/proizvod/intel-core-i9-13900k-3ghz-5-8ghz-procesor-5032037258647" placeholder="Link ka prodavnici" required>
+                            <input type="number" class="store-price-input" value="48000" placeholder="Cena u RSD" required>
                             <button type="button" class="spec-remove-btn" onclick="removePrice(this)"><i class="fas fa-times"></i></button>
                         </div>
                     </div>

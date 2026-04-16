@@ -241,7 +241,7 @@
 
 .price-row-header {
     display: grid;
-    grid-template-columns: 1fr 1fr auto;
+    grid-template-columns: 1fr 1fr 1fr auto;
     gap: 10px;
     padding: 0 12px;
     font-size: 0.8rem;
@@ -253,7 +253,7 @@
 
 .price-row {
     display: grid;
-    grid-template-columns: 1fr 1fr auto;
+    grid-template-columns: 1fr 1fr 1fr auto;
     gap: 10px;
     align-items: center;
     padding: 10px 12px;
@@ -424,7 +424,7 @@
     }
 
     .spec-row input:last-of-type,
-    .price-row input:last-of-type {
+    .price-row input {
         grid-column: 1;
     }
 

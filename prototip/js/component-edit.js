@@ -33,8 +33,9 @@ function addPrice() {
     row.className = 'price-row';
     row.dataset.id = priceIdCounter;
     row.innerHTML = `
-        <input type="text" class="store-name-input" placeholder="Naziv prodavnice">
-        <input type="number" class="store-price-input" placeholder="Cena u RSD">
+        <input type="text" class="store-name-input" placeholder="Naziv prodavnice" required>
+        <input type="text" class="store-link-input" placeholder="Link ka prodavnici" required>
+        <input type="number" class="store-price-input" placeholder="Cena u RSD" required>
         <button type="button" class="spec-remove-btn" onclick="removePrice(this)"><i class="fas fa-times"></i></button>
     `;
     editor.appendChild(row);
@@ -106,9 +107,15 @@ function setupFormSubmit() {
         const prices = [];
         document.querySelectorAll('.price-row').forEach(row => {
             const store = row.querySelector('.store-name-input').value.trim();
+            const link = row.querySelector('.store-link-input').value.trim();
             const price = row.querySelector('.store-price-input').value.trim();
-            if (store && price) prices.push({ store, price });
+            if (store && price) prices.push({ store, link, price });
         });
+
+        if (prices.length == 0) {
+            alert('Mora postojati barem jedna prodavnica po komponenti!');
+            return;
+        }
 
         console.log('Component updated:', {
             name,
