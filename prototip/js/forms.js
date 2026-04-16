@@ -34,14 +34,14 @@ function updatePasswordFeedback(password) {
     if (!feedbackElement) return;
 
     const requirements = validatePassword(password);
-    
+
     let feedbackHTML = '<div class="password-feedback">';
-    feedbackHTML += '<p class="feedback-title">Password must contain:</p>';
+    feedbackHTML += '<p class="feedback-title">Šifra mora sadržati:</p>';
     feedbackHTML += '<ul class="feedback-list">';
     feedbackHTML += `<li class="${requirements.minLength ? 'valid' : 'invalid'}">Minimum  karaktera</li>`;
     feedbackHTML += `<li class="${requirements.hasUppercase ? 'valid' : 'invalid'}">Barem jedno veliko slovo</li>`;
     feedbackHTML += `<li class="${requirements.hasLowercase ? 'valid' : 'invalid'}">Barem jedno malo slovo</li>`;
-    feedbackHTML += `<li class="${requirements.hasNumber ? 'valid' : 'invalid'}">Barm jedan broj</li>`;
+    feedbackHTML += `<li class="${requirements.hasNumber ? 'valid' : 'invalid'}">Barem jedan broj</li>`;
     feedbackHTML += '</ul>';
     feedbackHTML += '</div>';
 
@@ -81,13 +81,13 @@ function handleRegisterSubmit() {
     }
 
     if (!email) {
-        alert('molim va unesite email');
+        alert('Molim va unesite email');
         return;
     }
 
     const passwordReqs = validatePassword(password);
     if (!isPasswordValid(passwordReqs)) {
-        alert('Šira ne zadovoljava sve zahteve');
+        alert('Šifra ne zadovoljava sve zahteve');
         return;
     }
 
@@ -100,7 +100,7 @@ function handleRegisterSubmit() {
     alert('Uspešno ste napravili nalog!');
 
     console.log('Form data:', { username, email, password });
-    
+
 
 
     window.location.href = 'index.html';

@@ -12,9 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
     setupLikeDislikeFunctionality();
     setupEditMode();
     loadBuildData();
+    setupDeleteModal();
 });
 
-// Like/Dislike Functionality
+
 function setupLikeDislikeFunctionality() {
     const likeBtn = document.getElementById('likeBtn');
     const dislikeBtn = document.getElementById('dislikeBtn');
@@ -79,12 +80,10 @@ function handleDislike() {
     console.log('Dislike action:', buildState);
 }
 
-// Edit Mode
+
 function setupEditMode() {
     const editBtn = document.getElementById('editBtn');
     const editForm = document.getElementById('editForm');
-
-
 
     editBtn.addEventListener('click', openEditModal);
     editForm.addEventListener('submit', handleEditSubmit);
@@ -108,6 +107,27 @@ function closeEditModal() {
     modal.classList.remove('show');
 }
 
+function setupDeleteModal() {
+    const deleteBtn = document.getElementById('deleteBtn');
+    deleteBtn.addEventListener('click', openDeleteModal);
+}
+
+function openDeleteModal() {
+    const modal = document.getElementById('deleteModal');
+
+    modal.classList.add('show');
+}
+
+function closeDeleteModal() {
+    const modal = document.getElementById('deleteModal');
+    modal.classList.remove('show');
+}
+
+function handleDelete() {
+    alert('Računar je uspešno obrisan!');
+    window.location.href = 'index.html';
+}
+
 function handleEditSubmit(e) {
     e.preventDefault();
 
@@ -121,7 +141,7 @@ function handleEditSubmit(e) {
         return;
     }
 
-    // Update the display
+
     document.getElementById('buildTitle').textContent = newTitle;
     document.getElementById('buildDescription').textContent = newDescription;
 
@@ -131,29 +151,29 @@ function handleEditSubmit(e) {
     closeEditModal();
 }
 
-// Change Main Image
+
 function changeMainImage(thumbnail) {
     const mainImage = document.getElementById('mainImage');
     const thumbnails = document.querySelectorAll('.thumbnail');
 
-    // Update main image
+
     const imgSrc = thumbnail.querySelector('img').src;
     mainImage.src = imgSrc.replace('w=150', 'w=800');
 
-    // Update active thumbnail
+
     thumbnails.forEach(thumb => thumb.classList.remove('active'));
     thumbnail.classList.add('active');
 }
 
-// Remove Thumbnail Image
+
 function removeThumbnail(event) {
     event.stopPropagation();
     const thumbnail = event.currentTarget.closest('.thumbnail');
     const thumbnailsContainer = document.querySelector('.thumbnails-container');
     const mainImage = document.getElementById('mainImage');
-    
+
     thumbnail.remove();
-    
+
     // If removed thumbnail was active, set first remaining as active
     const remainingThumbnails = thumbnailsContainer.querySelectorAll('.thumbnail');
     if (remainingThumbnails.length > 0) {
@@ -164,7 +184,7 @@ function removeThumbnail(event) {
     }
 }
 
-// Load Build Data (placeholder for real data loading)
+
 function loadBuildData() {
     console.log('Loading build data for ID:', buildState.buildId);
 }
@@ -176,11 +196,18 @@ document.addEventListener('click', function(event) {
         closeEditModal();
     }
 });
+document.addEventListener('click', function(event) {
+    const modal = document.getElementById('deleteModal');
+    if (event.target === modal) {
+        closeDeleteModal();
+    }
+});
 
 // Keyboard shortcut to close modal
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeEditModal();
+        closeDeleteModal()
     }
 });
 
