@@ -60,7 +60,7 @@ function updatePasswordMatchFeedback(password, confirmPassword) {
 
     const matches = doPasswordsMatch(password, confirmPassword);
     const matchHTML = `<div class="password-match ${matches ? 'valid' : 'invalid'}">
-        ${matches ? '✓ Šifre se ne poklapaju' : '✗ Šifre se poklapaju'}
+        ${matches ? '✓ Šifre se poklapaju' : '✗ Šifre se ne poklapaju'}
     </div>`;
 
     matchElement.innerHTML = matchHTML;
@@ -103,7 +103,7 @@ function handleRegisterSubmit() {
 
 
 
-    window.location.href = 'index.html';
+    window.location.href = 'login.html';
 
 }
 
