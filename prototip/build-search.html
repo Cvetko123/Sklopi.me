@@ -43,7 +43,7 @@
         <div class="filter-container">
 
             <div class="filter-group">
-                <div class="filter-title">Price (RSD)</div>
+                <div class="filter-title">Cena</div>
                 <div class="input-row">
                     <input type="number" placeholder="Min">
                     <input type="number" placeholder="Max">
@@ -51,10 +51,34 @@
             </div>
 
             <div class="filter-group">
-                <div class="filter-title">Case</div>
+                <div class="filter-title">Veličina</div>
                 <label><input type="checkbox"> Full Tower</label>
                 <label><input type="checkbox"> Mid Tower</label>
                 <label><input type="checkbox"> MiniITX</label>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-title">
+                    Benchmark
+                </div>
+                <div class="benchmark-filter">
+                    <input type="text" class="benchmark-name" placeholder="Ime benchmark-a" value="Cinebench R23">
+                    <div class="input-row">
+                        <input type="number" placeholder="Min" value="2000">
+                        <input type="number" placeholder="Max">
+                    </div>
+                </div>
+                <div class="benchmark-filter">
+                    <input type="text" class="benchmark-name" placeholder="Ime benchmark-a">
+                    <div class="input-row">
+                        <input type="number" placeholder="Min">
+                        <input type="number" placeholder="Max">
+                    </div>
+                </div>
+                <div class="benchmark-buttons">
+                    <button class="add-benchmark">Dodaj benchmark filter</button>
+                    <button class="remove-benchmark">Ukloni zadnji benchmark filter</button>
+                </div>
             </div>
 
             <button class="search-action-btn">Apply Filters</button>

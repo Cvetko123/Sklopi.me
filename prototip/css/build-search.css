@@ -87,6 +87,46 @@
     box-sizing: border-box;
 }
 
+.benchmark-filter {
+    margin-bottom: 16px;
+}
+
+.benchmark-name {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+.add-benchmark {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 4px;
+}
+
+.remove-benchmark {
+    background-color: red;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 4px;
+    border-radius: 4px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.benchmark-buttons {
+    display: flex;
+
+}
+
 .search-bar {
     display: flex;
     gap: 10px;
